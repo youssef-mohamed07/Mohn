@@ -132,6 +132,8 @@
       z-index: 10000;
       font-family: 'Quicksand', sans-serif;
       font-weight: 600;
+      max-width: 90%;
+      text-align: center;
     }
 
     @media (max-width: 480px) {
@@ -148,10 +150,6 @@
       .message {
         font-size: 1.4rem;
       }
-
-      .popup {
-        display: block;
-      }
     }
   </style>
 </head>
@@ -165,7 +163,7 @@
   </div>
 
   <div class="message" id="message"></div>
-  <div class="popup" id="popup" style="display: none;">Yay! Can’t wait to see you Thursday! 💞</div>
+  <div class="popup" id="popup">Yay! Can’t wait to see you Thursday! 💞</div>
 
   <!-- Romantic background music (Love Story - Bensound) -->
   <audio id="bgMusic" src="https://www.bensound.com/bensound-music/bensound-love.mp3"></audio>
