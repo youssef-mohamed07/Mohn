@@ -165,10 +165,10 @@
   </div>
 
   <div class="message" id="message"></div>
-  <div class="popup" id="popup">Yay! Can’t wait to see you Thursday! 💞</div>
+  <div class="popup" id="popup" style="display: none;">Yay! Can’t wait to see you Thursday! 💞</div>
 
-  <!-- Romantic background music -->
-  <audio id="bgMusic" src="https://www.bensound.com/bensound-music/bensound-romantic.mp3"></audio>
+  <!-- Romantic background music (Love Story - Bensound) -->
+  <audio id="bgMusic" src="https://www.bensound.com/bensound-music/bensound-love.mp3"></audio>
 
   <script>
     const yesBtn = document.getElementById('yesBtn');
@@ -177,14 +177,19 @@
     const message = document.getElementById('message');
     const popup = document.getElementById('popup');
     const music = document.getElementById('bgMusic');
+
     let noClicks = 0;
+    let popupShown = false;
 
     yesBtn.addEventListener('click', () => {
       yesBtn.remove();
       noBtn.remove();
       question.textContent = "";
       message.textContent = "Awww 😍 Can't wait for Thursday!";
-      popup.style.display = "block";
+      if (!popupShown) {
+        popup.style.display = "block";
+        popupShown = true;
+      }
       playMusic();
       heartBurstConfetti();
     });
@@ -231,7 +236,7 @@
 
     function playMusic() {
       music.play().catch(() => {
-        console.log("Autoplay prevented — tap anywhere to play.");
+        console.log("Autoplay prevented — user needs to tap to play.");
       });
     }
   </script>
